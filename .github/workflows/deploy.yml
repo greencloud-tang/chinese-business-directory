@@ -1,0 +1,37 @@
+name: Hugo Site CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true  # Fetch Hugo themes as submodules
+          fetch-depth: 0    # Fetch all history for all branches
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - name: Build Hugo Site
+        run: |
+          hugo --baseURL 'https://greencloud-tang.github.io/chinese-business-directory/'
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          # The target branch should be `gh-pages` for GitHub Pages.
+          publish_branch: gh-pages
