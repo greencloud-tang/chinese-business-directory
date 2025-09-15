@@ -1,0 +1,8 @@
+<div class="two-column-layout">
+    <div class="column-left">
+      {{ .Get "left" | .Page.RenderString }}
+    </div>
+    <div class="column-right">
+      {{ .Get "right" | .Page.RenderString }}
+    </div>
+</div>

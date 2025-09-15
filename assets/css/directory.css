@@ -1,8 +1,12 @@
 
-    html, body {
-        padding: 20px;
-        min-height: 100vh;
-        }
+html, body {
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.pb7 {
+    padding-bottom: 70px;
+}
 
 /* Override theme's max-width on article tag */
 article.mw8 {
@@ -14,53 +18,78 @@ article.mw8 {
     height: 600px;
 }
 
-    #wordCloudCanvas1, #wordCloudCanvas2 {
-        border: 1px solid #ccc;
-        height: 600px; 
-        width: 100%;
-    }
-    .hidden {
-            display: none;
-        }
-        .visible {
-            display: block;
-        }
-        #businessTable {
-            margin: 20px 0;
-            flex: 1;
-        }
-        .search-container {
-            margin: 20px 0;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        .search-container input {
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            width: 300px;
-        }
-        .button {
-            padding: 8px 16px;
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #e9ecef;
-        }
+#wordCloudCanvas1, #wordCloudCanvas2 {
+    border: 1px solid #ccc;
+    height: 600px; 
+    width: 100%;
+}
 
-        .search-container #toggleButton {
-        margin-left: auto; /* Push the button to the right */
-        }
+.hidden {
+    display: none;
+}
 
-        #tableSearch:focus {
-            outline: none;
-            border-color: #4CAF50;
-            box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
-        }
-        .tabulator .tabulator-tableholder .tabulator-table .tabulator-cell {
-            white-space: normal;
-        }
+.visible {
+    display: block;
+}
+        
+#businessTable {
+    margin: 20px 0;
+    flex: 1;
+}
+
+.search-container {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.button {
+    padding: 8px 16px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+        
+.button:hover {
+    background-color: #e9ecef;
+}
+
+.search-container #toggleButton {
+    margin-left: auto; /* Push the button to the right */
+}
+
+#tableSearch:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+/* Tabulator specific styles */
+.tabulator .tabulator-tableholder .tabulator-table {
+    white-space: normal;
+}
+
+.tabulator {
+    height: 100% !important;  /* Tabulator fills its parent container */
+}
+
+.tabulator-row {
+    height: auto !important;
+}
+
+.tabulator-cell {
+    white-space: normal !important;
+    word-break: break-word;
+    height: auto !important;
+    display: flex; /* Helps align content vertically inside the row */
+    align-items: center; /* Vertically centers the content in the cell */
+}

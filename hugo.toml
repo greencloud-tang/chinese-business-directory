@@ -56,10 +56,17 @@ url = "https://twitter.com/GoHugoIO"
     url = "/location-list/"
     weight = 30 # Place it third
 
+  # Define the "Patterns" page
+  [[menu.main]]
+    name = "Patterns"
+    url = "/patterns/"
+    weight = 40 # Place it fourth
+
+
   # Define the "Contact" page
   [[menu.main]]
     name = "Contact"
     url = "/contact/"
-    weight = 40 # Place it last
+    weight = 50 # Place it last
 
-# Triggering a new build
+  

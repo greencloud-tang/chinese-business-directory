@@ -5,6 +5,10 @@ html, body {
     padding: 0;
     } 
 
+.pb7 {
+    padding-bottom: 70px;
+}
+
 /* Override theme's max-width on article tag */
 article.mw8 {
     max-width: 100% !important;
@@ -51,9 +55,22 @@ article.mw8 {
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
 }
 /* Tabulator specific styles */
-.tabulator .tabulator-tableholder .tabulator-table .tabulator-cell {
+.tabulator .tabulator-tableholder .tabulator-table {
     white-space: normal;
 }
+
 .tabulator {
     height: 100% !important;  /* Tabulator fills its parent container */
+}
+
+.tabulator-row {
+    height: auto !important;
+}
+
+.tabulator-cell {
+    white-space: normal !important;
+    word-break: break-word;
+    height: auto !important;
+    display: flex; /* Helps align content vertically inside the row */
+    align-items: center; /* Vertically centers the content in the cell */
 }

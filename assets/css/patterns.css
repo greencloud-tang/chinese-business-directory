@@ -1,0 +1,56 @@
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    } 
+
+.pb7 {
+    padding-bottom: 70px;
+}
+
+
+#patternsTable {
+    flex: 1; 
+} 
+
+/* Tabulator specific styles */
+.tabulator .tabulator-tableholder .tabulator-table {
+    white-space: normal;
+}
+
+.tabulator {
+    height: 100% !important;  /* Tabulator fills its parent container */
+}
+
+.tabulator-row {
+    height: auto !important;
+}
+
+.tabulator-cell {
+    white-space: normal !important;
+    word-break: break-word;
+    height: auto !important;
+    display: flex; /* Helps align content vertically inside the row */
+    align-items: center; /* Vertically centers the content in the cell */
+}
+
+/* Container for the two-column layout */
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr; /* Default to one column on mobile */
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+/* On screens wider than 600px, change to two columns */
+@media (min-width: 600px) {
+  .two-column-layout {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.column-right {
+  min-width: 0;
+}

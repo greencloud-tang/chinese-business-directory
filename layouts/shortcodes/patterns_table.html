@@ -1,0 +1,145 @@
+ <div id="patternsTable">
+            <div class="loading">Loading data...</div>
+        </div>
+
+ <script> 
+let patternsTable;
+let tableData;
+let lastLayout;
+let lastBreakpointState; // New variable to track the breakpoint state
+let resizeTimer;
+let lastKnownWidth;
+
+ // Function to generate row ids.
+function generateRowIds(data) {
+    let idCounter = 0;
+    data.forEach(row => {
+        row.id = idCounter++;
+    });
+}
+//----------------------
+// Initialize application
+function initializeApp() {
+    // Load CSV data
+
+    // Use the Hugo template variable to get the correct path
+    const csvFilePath = '{{ .Site.BaseURL }}data/transliterationPatterns.csv';
+
+
+    fetch(csvFilePath)
+    .then(response => response.text())
+    .then(csvText => {
+        // Parse CSV using Papa Parse
+        Papa.parse(csvText, {
+            header: true,
+            skipEmptyLines: true,
+            complete: function(results) {
+                tableData = results.data;
+                generateRowIds(tableData); // Generate IDs for the loaded data
+                console.log("Row ID:", tableData[0].id, " - Row:", tableData[0]);
+                console.log("Data to be displayed:", tableData);
+                
+                // Add function to initiate the table;
+                initTable("fitData"); // Initial layout is fitData
+                lastLayout = "fitData";
+
+               // We add a setTimeout to ensure the table has fully initialized before we
+                // create the observer, preventing race conditions.
+                setTimeout(() => {
+                    setupResizeListener();
+                }, 200); // Wait 200ms before creating the observer
+            }
+        });
+    })
+    .catch(error => console.error('Error loading CSV:', error));
+}
+//--------------------
+
+//table initialization: 
+function initTable(layout)  {
+    const hiddenFields = ["id"];
+
+    if (!document.getElementById('patternsTable')) {
+        console.error("Table element not found");
+        return;
+    }
+
+    // This code will automatically generate columns
+    // for all fields in your CSV, without any header filters.
+    const columns = Object.keys(tableData[0]).map(field => {
+        let columnDefinition = {
+            title: field,
+            field: field
+        };
+        
+        // This part remains to hide specific fields if needed
+        if (hiddenFields.includes(field)) {
+            columnDefinition.visible = false;
+        }
+
+        return columnDefinition;
+    });
+
+    // Initialize the table without any filtering
+    const patternsTable = new Tabulator("#patternsTable", {
+        data: tableData, // Use the global tableData variable here
+        layout: layout, // // Use the layout passed to the function
+        pagination: "local",
+                paginationSize: 20,
+                paginationButtonCount: 3,
+                height: "100%",
+                movableColumns: true,
+                layoutColumnsOnNewData: true,
+                columns: columns,
+    });
+    // Check the height of the parent container
+    const parent = document.getElementById('patternsTable').parentElement;
+    console.log("Parent Container:", parent);
+
+    // Use a setTimeout to log the height after the browser has finished its layout calculations
+    setTimeout(() => {
+        console.log("Parent Container Height (stable):", parent.offsetHeight);
+        console.log("Table Height:", patternsTable.element.offsetHeight);
+    }, 100);
+}
+
+// New function to set up the window resize listener
+function setupResizeListener() {
+    // On first run, get the initial state
+    lastBreakpointState = window.innerWidth >= 600;
+
+    window.addEventListener('resize', () => {
+        // Use the window's inner width for a reliable breakpoint check
+        const windowWidth = window.innerWidth;
+
+        // Log the window width for debugging
+        console.log("Window Width:", windowWidth);
+        
+        // Use a boolean to track the breakpoint state
+        const currentBreakpointState = windowWidth >= 600;
+        
+        // Only run the logic if the breakpoint state has changed
+        if (currentBreakpointState !== lastBreakpointState) {
+            // Determine the new layout based on the current breakpoint
+            const newLayout = currentBreakpointState ? "fitData" : "fitColumns";
+
+            // Destroy the existing table instance
+            if (patternsTable) {
+                patternsTable.destroy();
+            }
+
+            // Re-initialize the table with the new layout
+            initTable(newLayout);
+            
+            // Update the lastLayout and lastBreakpointState
+            lastLayout = newLayout;
+            lastBreakpointState = currentBreakpointState;
+        }
+    });
+}
+
+    //-------------------------
+// Start the application
+    initializeApp()
+    </script>
+</body>

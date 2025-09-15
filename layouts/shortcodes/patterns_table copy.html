@@ -1,0 +1,94 @@
+ <div id="patternsTable">
+            <div class="loading">Loading data...</div>
+        </div>
+
+ <script> 
+//----------------------
+// Initialize application
+function initializeApp() {
+    // Load CSV data
+
+    // Use the Hugo template variable to get the correct path
+    const csvFilePath = '{{ .Site.BaseURL }}data/transliterationPatterns.csv';
+
+
+    fetch(csvFilePath)
+    .then(response => response.text())
+    .then(csvText => {
+        // Parse CSV using Papa Parse
+        Papa.parse(csvText, {
+            header: true,
+            skipEmptyLines: true,
+            complete: function(results) {
+                tableData = results.data;
+                generateRowIds(tableData); // Generate IDs for the loaded data
+                console.log("Row ID:", tableData[0].id, " - Row:", tableData[0]);
+                
+                //add funtion to initiate the table;
+                initTable();
+        
+            }
+        });
+    })
+    .catch(error => console.error('Error loading CSV:', error));
+}
+//--------------------
+
+//table initialization: 
+function initTable() {
+    const hiddenFields = ["id"];
+
+    if (!document.getElementById('patternsTable')) {
+        console.error("Table element not found");
+        return;
+    }
+
+    // This code will automatically generate columns
+    // for all fields in your CSV, without any header filters.
+    const columns = Object.keys(tableData[0]).map(field => {
+        let columnDefinition = {
+            title: field,
+            field: field
+        };
+        
+        // This part remains to hide specific fields if needed
+        if (hiddenFields.includes(field)) {
+            columnDefinition.visible = false;
+        }
+
+        return columnDefinition;
+    });
+
+    // Initialize the table without any filtering or pagination options
+    const patternsTable = new Tabulator("#patternsTable", {
+        data: tableData, // Use the global tableData variable here
+        layout: "fitColumns", // Use fitColumns to make all columns fit in the table width
+        height: "100%",
+        movableColumns: true,
+        layoutColumnsOnNewData: true,
+        columns: columns
+    });
+
+   // Use a ResizeObserver to watch the table's container
+    // and redraw the table whenever its size changes.
+    const patternsTableElement = document.getElementById('patternsTable');
+    if (patternsTableElement) {
+        new ResizeObserver(() => {
+            patternsTable.redraw(true);
+        }).observe(patternsTableElement);
+    }
+}
+
+//function to generate row ids.
+    function generateRowIds(data) {
+        let idCounter = 0;
+        data.forEach(row => {
+        row.id = idCounter++;
+    });
+    }
+
+    //-------------------------
+// Start the application
+    initializeApp()
+    </script>
+</body>
