@@ -1,6 +1,9 @@
- <div id="patternsTable">
-            <div class="loading">Loading data...</div>
-        </div>
+<div class="flex-container">
+    <div id="patternsTable" class="table-container">
+        <div class="loading">Loading data...</div>
+    </div>
+    <div class="flex-spacer"></div>
+</div>
 
  <script> 
 let patternsTable;
@@ -84,13 +87,11 @@ function initTable(layout)  {
     const patternsTable = new Tabulator("#patternsTable", {
         data: tableData, // Use the global tableData variable here
         layout: layout, // // Use the layout passed to the function
-        pagination: "local",
-                paginationSize: 20,
-                paginationButtonCount: 3,
-                height: "100%",
-                movableColumns: true,
-                layoutColumnsOnNewData: true,
-                columns: columns,
+        
+        height: "100%",
+        movableColumns: true,
+        layoutColumnsOnNewData: true,
+        columns: columns,
     });
     // Check the height of the parent container
     const parent = document.getElementById('patternsTable').parentElement;

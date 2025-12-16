@@ -9,6 +9,10 @@ html, body {
 .pb7 {
     padding-bottom: 70px;
 }
+.mw8 {
+    max-width: 80%;
+}
+
 
 
 #patternsTable {
@@ -53,4 +57,15 @@ html, body {
 
 .column-right {
   min-width: 0;
+}
+
+/* A Flexbox container to prevent the Tabulator from adding an extra gray row.*/
+.flex-container {
+display: flex;
+flex-direction: column;
+}
+
+/* A spacer that will grow to fill any available space at the bottom of the container. */
+.flex-spacer {
+flex-grow: 1;
 }

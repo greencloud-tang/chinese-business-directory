@@ -1,6 +1,6 @@
 # baseURL = 'https://github.com/greencloud-tang/chinese-business-directory'
 languageCode = 'en-us'
-title = 'How Early Chinese Immigrants Named North American Places'
+title = 'The 1913 Transnational Chinese Business Directory: A Geo-Linguistic Exploration'
 relativeURLs = false
 [module]
 [[module.imports]]
