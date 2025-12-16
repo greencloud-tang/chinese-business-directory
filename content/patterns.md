@@ -1,5 +1,5 @@
 +++
-date = '2025-08-14T16:05:22-04:00'
+lastmod = 
 draft = false
 title = 'Patterns'
 type = "patterns"
