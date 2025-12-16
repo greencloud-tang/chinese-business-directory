@@ -52,12 +52,12 @@ Examples of Toishanese transliterations
 
 ### 3. Challenges to correctly identify the Enlgish place names from the transliterations
 
-When the Chinese transliteration of American and Canadian place names are found on the Chinese community newspapers, correspondence and secondary sources, it could be challenging to correct identify their corresponding place names in English, even with proficency in Cantonese and Toishanese dialects. 
+When the Chinese transliteration of American and Canadian place names are found on the Chinese community newspapers, correspondence and secondary sources, it could be challenging to correctly identify their corresponding place names in English, even with proficency in Cantonese and Toishanese dialects. 
 
 #### 3.1. Wrong pronunciation for various reasons. 
-During the analyis of the data, some transliterations are hard to accounted for, as neither the Toishanese nor Cantonese pronunciation seem to appromimate the English phoneme. Some examples are below. 
+When the data was analyzed, some transliterations are hard to accounted for, as neither the Toishanese nor Cantonese pronunciation seem to appromimate the English phoneme. Some examples are below. 
 
-An assumption could be made that, the person who first translaterated the place name did not pronounce the English place name correctly. The early Chinese immigrants to the United States and Cananda primarily came from villages in the "Four Districts" with little formal education. It is reasonable to assume that they learned the pronunciation of the English place names by hearing others pronoucing them. As countries of immirants, many place names in the United States and Canada may be pronounced differently by different immigrant communities, especially indigenous place names. 
+An assumption could be made that, the person who first translaterated the place name did not pronounce the English place name correctly. The early Chinese immigrants to the United States and Cananda primarily came from villages in the "Four Districts" with little formal education. It is reasonable to assume that they learned the pronunciation of the English place names by hearing others pronoucing them. As countries of immigrants, many place names in the United States and Canada may be pronounced differently by different immigrant communities, especially indigenous place names. 
 
 | Place Name       	| IPA            	| Transliteration 	| Note                                	|
 |--------------	|-----------------	|--------------------|---------------------------------------	|
@@ -76,7 +76,7 @@ When the place name only contains one syllable, one or two additional Chinese ch
 
 #### 3.3. Confusion with other place names
 
-The following transliterations are apparently not the phonectic approximation of its English place names.
+The following transliterations are apparently not the phonectic approximation of their English place names.
 
 | Place Name 	| Transliteration 	| Note                             	|
 |------------	|-----------------	|----------------------------------	|
