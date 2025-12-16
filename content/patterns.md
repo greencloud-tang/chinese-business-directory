@@ -1,5 +1,5 @@
 +++
-lastmod = 
+
 draft = false
 title = 'Patterns'
 type = "patterns"

@@ -69,5 +69,3 @@ url = "https://twitter.com/GoHugoIO"
     url = "/contact/"
     weight = 50 # Place it last
 
-  #To enable Hugo to read the commit time from Git
-  enableGitInfo = true

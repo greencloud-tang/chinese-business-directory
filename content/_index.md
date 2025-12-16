@@ -1,5 +1,5 @@
 +++
-date = '2025-08-14T15:47:27-04:00'
+date = '2025-12-16T16:05:22-04:00'
 draft = false
 title = 'About'
 type = "posts"
