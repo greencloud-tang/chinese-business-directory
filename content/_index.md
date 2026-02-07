@@ -1,13 +1,10 @@
 +++
 date = '2025-12-16T16:05:22-04:00'
 draft = false
-title = 'About'
+title = 'About the Project'
 type = "posts"
 layout = "about"
 +++
-
-
-## About the Project
 
 This project utilized the Google Gemini API within a Python script to process a digitized directory of early 20th-century global Chinese businesses (Wong, 1913). The API performed Optical Character Recognition (OCR) on the traditional Chinese text within the PDF, extracting key business information. This extracted data was then analyzed and visualized to unveil findings revealing: 
 
@@ -25,6 +22,6 @@ From the top menu, you may select "Directory", "Location List" or "Patterns" pag
 
     - There are two data visualizations alongside with this data table, an interactive map showing the geographical distribution of the businesses, and a wordcloud showing the business sectors. 
 
-2. The [Location List](https://greencloud-tang.github.io/chinese-business-directory/location-list/) contains a list of place names of the Americas with Chinese transliterations sourced from the above directory and a few other sources. 
+2. The [Location List](https://greencloud-tang.github.io/chinese-business-directory/location-list/) contains a list of place names with Chinese transliterations sourced from the above directory and a few other sources. 
 
-3. The [Patterns](https://greencloud-tang.github.io/chinese-business-directory/patterns/) contains patterns of the Chinese transliteration of place names by early Chinese immmigrants in Canada and the United States in the early 1900s, identified from an analysis of the data extracted from the International Chinese Business Directory of the World (Wong, 1913).
+3. The [Patterns](https://greencloud-tang.github.io/chinese-business-directory/patterns/) contains patterns of the Chinese transliteration of place names by Chinese immigrants in Canada and the United States in the early 1900s, identified from an analysis of the data extracted from the International Chinese Business Directory of the World (Wong, 1913).

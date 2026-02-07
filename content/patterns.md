@@ -1,7 +1,7 @@
 +++
 
 draft = false
-title = 'Patterns'
+title = 'Transliteration Patterns'
 type = "patterns"
 layout = "patterns"
 +++

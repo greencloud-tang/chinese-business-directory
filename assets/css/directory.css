@@ -93,3 +93,7 @@ article.mw8 {
     display: flex; /* Helps align content vertically inside the row */
     align-items: center; /* Vertically centers the content in the cell */
 }
+
+.small-text-note {
+  font-size: 0.75em; /* This makes the text 75% of the parent's font size */
+}
