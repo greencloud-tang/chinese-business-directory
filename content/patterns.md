@@ -7,7 +7,7 @@ layout = "patterns"
 +++
 
 {{< twocolumns left=`
-Through an analysis of the data for the United States and Canada extracted from International Chinese Business Directory of the World (Wong, 1913), some patterns are identified about the Chinese transliteration of place names by early Chinese immmigrants in the early 1900s. 
+Through an analysis of the data for the United States and Canada extracted from International Chinese Business Directory of the World (Wong, 1913), some patterns are identified about the Chinese transliteration of place names by early Chinese immigrants in the early 1900s. 
 
 ### 1. Transliteration approaches
 The majority of the place names were transliterated, replaced with
@@ -57,7 +57,7 @@ When the Chinese transliteration of American and Canadian place names are found 
 #### 3.1. Wrong pronunciation for various reasons. 
 When the data was analyzed, some transliterations are hard to accounted for, as neither the Toishanese nor Cantonese pronunciation seem to appromimate the English phoneme. Some examples are below. 
 
-An assumption could be made that, the person who first translaterated the place name did not pronounce the English place name correctly. The early Chinese immigrants to the United States and Cananda primarily came from villages in the "Four Districts" with little formal education. It is reasonable to assume that they learned the pronunciation of the English place names by hearing others pronoucing them. As countries of immigrants, many place names in the United States and Canada may be pronounced differently by different immigrant communities, especially indigenous place names. 
+An assumption could be made that, the person who first translaterated the place name did not pronounce the English place name correctly. The early Chinese immigrants to the United States and Cananda primarily came from villages in the "Four Districts" with little formal education. It is reasonable to assume that they learned the pronunciation of the English place names by hearing others pronouncing them. As countries of immigrants, many place names in the United States and Canada may be pronounced differently by different immigrant communities, especially indigenous place names. 
 
 | Place Name       	| IPA            	| Transliteration 	| Note                                	|
 |--------------	|-----------------	|--------------------|---------------------------------------	|
